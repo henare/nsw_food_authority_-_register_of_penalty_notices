@@ -1,4 +1,5 @@
 <?php
+require 'scraperwiki.php';
 
 require 'scraperwiki/simple_html_dom.php';
 
@@ -33,7 +34,7 @@ foreach($dom->find("#myTable tr") as $tr)
         continue;
     }
 
-    if (scraperwiki::select("* from swdata where `id`='$id'"))
+    if (scraperwiki::select("* from data where `id`='$id'"))
     {
         info("Skipping existing record $id...\n");
     } 
